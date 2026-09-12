@@ -1,0 +1,14 @@
+name: PR Synchronize Practice
+
+on:
+  pull_request:
+    types:
+      - synchronize
+
+jobs:
+  pr-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Synchronize Triggered
+        run: echo "A new commit was pushed to an existing Pull Request"

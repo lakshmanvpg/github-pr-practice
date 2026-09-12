@@ -1,0 +1,23 @@
+name: PR Reopened Practice
+
+on:
+  pull_request:
+    types:
+      - reopened
+
+jobs:
+  pr-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Reopened Triggered
+        run: echo "A closed Pull Request was reopened"
+
+      - name: Show PR number
+        run: echo "PR Number:${{ github.event.pull_request.number }}"
+
+      - name: Show source branch
+        run: echo "Source Branch:${{ github.head_ref }}"
+
+      - name: Show target branch
+        run: echo "Target Branch:${{ github.base_ref }}"
